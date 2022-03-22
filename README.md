@@ -1,2 +1,2 @@
-# ImageJ_Macros
+# ImageJ Macros
 Macros related to image analysis with imageJ-FiJi

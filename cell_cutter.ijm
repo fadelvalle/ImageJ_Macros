@@ -1,14 +1,15 @@
 
-	dir = getDirectory("Escoge el directorio de las células cortadas");
+	dir = getDirectory("Choose the image directory");
 	
-	imagenames=getFileList(dir); /// directorio de las células a analizar
-	nbimages=lengthOf(imagenames); /// nombre de las imagenes
+	imagenames=getFileList(dir); 
+	nbimages=lengthOf(imagenames); 
 	
 	File.makeDirectory(dir+File.separator+"Cortadas");
-	
+
+
 	for(image=0; image<nbimages; image++) {
 		name=imagenames[image];
-		totnamelength=lengthOf(name); /// extensión del nombre
+		totnamelength=lengthOf(name); 
 		namelength=totnamelength-4;
 		name1=substring(name, 0, namelength);
 		extension=substring(name, namelength, totnamelength);
@@ -24,7 +25,7 @@
 			getDimensions(width,height,channels,slices,frames);
 			getPixelSize(unit,pw,ph);
 			makeRectangle(0, 0, 20/pw, 20/ph);
-			waitForUser ("Marca las celulas a cortar en ROI (ctrl+t o solo t)");
+			waitForUser ("Select cells with the square tool and add them to the ROI manager (ctr+T) ");
 			
 			numROI=roiManager("count"); 
 			for (i=0; i<numROI; i++){
